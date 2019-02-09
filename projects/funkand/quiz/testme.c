@@ -25,16 +25,17 @@ char inputChar()
 
 char *inputString()
 {
+	static int STRING_SIZE = 7;
 	int randInt, i;
 	char* string;
 
 	// Allocate space for a string
-	string = malloc(7 * sizeof(char));
+	string = malloc(STRING_SIZE * sizeof(char));
 	// Clear the character array
-	memset(string, '\0', 7 * sizeof(char));
+	memset(string, '\0', STRING_SIZE * sizeof(char));
 
 	// Set each character in string to a limited random value
-	for(i = 0; i < 6; i++)
+	for(i = 0; i < STRING_SIZE - 1; i++)
 	{
 		// Generate random number from 0 to 5
 		randInt = rand() % 6;
