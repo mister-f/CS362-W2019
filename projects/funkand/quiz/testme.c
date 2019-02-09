@@ -37,8 +37,8 @@ char *inputString()
 	// Set each character in string to a limited random value
 	for(i = 0; i < STRING_SIZE - 1; i++)
 	{
-		// Generate random number from 0 to 5
-		randInt = rand() % 6;
+		// Generate random number from 0 to 4
+		randInt = rand() % 5;
 		if(randInt == 0){
 			string[i] = 'r';
 		}
@@ -49,12 +49,9 @@ char *inputString()
 			string[i] = 's';
 		}
 		if(randInt == 3){
-			string[i] = 'e';
-		}
-		if(randInt == 4){
 			string[i] = 't';
 		}
-		if(randInt == 5){
+		if(randInt == 4){
 			string[i] = '\0';
 		}
 	}
