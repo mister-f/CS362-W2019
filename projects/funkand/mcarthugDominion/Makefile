@@ -1,4 +1,4 @@
-CFLAGS= -Wall -fpic -coverage -lm -std=c99
+CFLAGS= -g -ggdb -Wall -fpic -coverage -lm -std=c99
 
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
@@ -99,15 +99,15 @@ unittestresults: unittest1.c unittest2.c unittest3.c unittest4.c cardtest1.c car
 	./cardtest2 >> unittestresults.out
 	gcov -f -b dominion.c >> unittestresults.out
 
-	echo "cardtest3.c:" >> unittestresults.out
-	gcc -o cardtest3 cardtest3.c dominion.c rngs.c $(CFLAGS)
-	./cardtest3 >> unittestresults.out
-	gcov -f -b dominion.c >> unittestresults.out
-
-	echo "cardtest4.c:" >> unittestresults.out
-	gcc -o cardtest4 cardtest4.c dominion.c rngs.c $(CFLAGS)
-	./cardtest4 >> unittestresults.out
-	gcov -f -b dominion.c >> unittestresults.out
+#	echo "cardtest3.c:" >> unittestresults.out
+#	gcc -o cardtest3 cardtest3.c dominion.c rngs.c $(CFLAGS)
+#	./cardtest3 >> unittestresults.out
+#	gcov -f -b dominion.c >> unittestresults.out
+#
+#	echo "cardtest4.c:" >> unittestresults.out
+#	gcc -o cardtest4 cardtest4.c dominion.c rngs.c $(CFLAGS)
+#	./cardtest4 >> unittestresults.out
+#	gcov -f -b dominion.c >> unittestresults.out
 
 results: randomtestcard1.c randomtestcard2.c randomtestadventurer.c dominion.c rngs.c
 
